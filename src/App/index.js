@@ -1,16 +1,24 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import getTodos from '../helpers/data/todosData';
 import TodoList from '../components/TodoList';
 import TodoForm from '../components/TodoForm';
-import './App.scss';
+import globals from '../styles/Globals';
+
+const AppStyle = styled.div`
+  padding: 20px;
+  background-color: ${globals.bgColor};
+  color: ${globals.fontColor};
+  text-align: center;
+
+  .list-container {
+    margin: 50px 0px;
+  }
+`;
 
 function App() {
   const [todos, setTodos] = useState(getTodos);
   const [doneTodos, setDoneTodos] = useState([]);
-
-  // useEffect(() => {
-  //   setTodos(getTodos());
-  // }, []);
 
   const handleRemoveTodo = (id) => {
     const newTodoList = todos.filter((todo) => todo.id !== id);
@@ -47,28 +55,32 @@ function App() {
     )));
 
   return (
-    <div className='App'>
+    <AppStyle>
+      <h1>
+        Welcome to Todo!
+        {/* <i className="fas fa-list" /> */}
+      </h1>
       <TodoForm
         setTodos={setTodos}
         todos={todos}
       />
       {
         todos.length ? (
-          <>
-        <h1>To Do List:</h1>
-        {todoListComp(todos)}
-        </>
+          <div className="list-container">
+            <h3>To Do List:</h3>
+            {todoListComp(todos)}
+          </div>
         ) : ''
       }
       {
         doneTodos.length ? (
-          <>
-            <h1>Done Todos</h1>
+          <div className="list-container">
+            <h3>Done Todos</h3>
             {todoListComp(doneTodos)}
-          </>
+          </div>
         ) : ''
       }
-    </div>
+    </AppStyle>
   );
 }
 

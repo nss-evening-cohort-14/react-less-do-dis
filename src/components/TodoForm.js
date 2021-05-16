@@ -8,10 +8,17 @@ const TodoFormComp = styled.div`
   padding: 5px;
   width: 50%;
 
+  @media only screen and (max-width: 700px) {
+    width: 90%;
+  }
+
   input {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px;
+    text-align: center;
+    box-shadow: inset 0px 0px 0px 0px;
+    text-transform: uppercase;
   }
 `;
 
@@ -51,7 +58,7 @@ export default function TodoForm({
       <input
         name='name'
         type='text'
-        placeholder='Enter Task'
+        placeholder='Add a TODO'
         value={todo.name}
         onChange={handleInputChange}
       />
