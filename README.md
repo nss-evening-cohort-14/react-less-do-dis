@@ -1,7 +1,8 @@
-# React Template
+# React Todo This!
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5789f83e-f86f-4457-8e0c-3fc2acc5406f/deploy-status)](https://app.netlify.com/sites/react-todo-this/deploys)
 
-**Use this template to get up and running quickly on projects.**
+[Checkout the demo](https://react-todo-this.netlify.app/)
 
-This is just like the webpack template. Use it, create the repo, connect it to your local and `npm i`.
+This app was created to help students step through some react knowledge. 
 
-- [Steps to deploy](https://github.com/nss-nightclass-projects/REACT-Deployment-Netlify)
+It uses basic react and styled-components.
